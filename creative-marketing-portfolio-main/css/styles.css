@@ -1538,14 +1538,17 @@ footer {
   .coverflow-track {
     position: absolute;
     inset: 0;
-    width: 100%;
+    left: 50%;
+    right: auto;
+    width: 0;
     height: 100%;
   }
 
   .cf-card {
+    left: 0;
     width: min(250px, calc(100vw - 5rem));
     height: 180px;
-    margin-left: calc(-1 * min(250px, calc(100vw - 5rem)) / 2);
+    margin-left: 0;
     margin-top: -90px;
   }
 
@@ -1610,9 +1613,10 @@ footer {
   }
 
   .cf-card {
+    left: 0;
     width: min(220px, calc(100vw - 4.5rem));
     height: 160px;
-    margin-left: calc(-1 * min(220px, calc(100vw - 4.5rem)) / 2);
+    margin-left: 0;
     margin-top: -80px;
   }
 

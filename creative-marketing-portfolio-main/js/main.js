@@ -13,14 +13,14 @@ const portfolioVideos = [
     orientation: 'vertical',
     tag_es: 'Spot Institucional',
     tag_en: 'Institutional Spot',
-    subtitle_es: 'ComunicaciÃ³n Institucional Â· Formato Vertical',
-    subtitle_en: 'Institutional Communication Â· Vertical Format',
+    subtitle_es: 'Comunicacion Institucional - Formato Vertical',
+    subtitle_en: 'Institutional Communication - Vertical Format',
     desc_es: 'Video institucional grabado en aula con enfoque informativo y publicitario.',
     desc_en: 'Institutional video filmed in a classroom with an informative and advertising focus.',
     meta: [
-      { label_es: 'CategorÃ­a', label_en: 'Category', val: 'Institucional' },
+      { label_es: 'Categoria', label_en: 'Category', val: 'Institucional' },
       { label_es: 'Formato', label_en: 'Format', val: '9:16 Vertical' },
-      { label_es: 'Enfoque', label_en: 'Focus', val: 'ComunicaciÃ³n' }
+      { label_es: 'Enfoque', label_en: 'Focus', val: 'Comunicacion' }
     ]
   },
   {
@@ -31,12 +31,12 @@ const portfolioVideos = [
     orientation: 'vertical',
     tag_es: 'Reel / TikTok 9:16',
     tag_en: 'Reel / TikTok 9:16',
-    subtitle_es: 'Gameplay Vertical Â· Ritmo & RetenciÃ³n',
-    subtitle_en: 'Vertical Gameplay Â· Pacing & Retention',
-    desc_es: 'Gameplay vertical editado para consumo rÃ¡pido y alta retenciÃ³n.',
+    subtitle_es: 'Gameplay Vertical - Ritmo & Retencion',
+    subtitle_en: 'Vertical Gameplay - Pacing & Retention',
+    desc_es: 'Gameplay vertical editado para consumo rapido y alta retencion.',
     desc_en: 'Vertical gameplay edit optimized for fast consumption and high retention.',
     meta: [
-      { label_es: 'CategorÃ­a', label_en: 'Category', val: 'Short Form' },
+      { label_es: 'Categoria', label_en: 'Category', val: 'Short Form' },
       { label_es: 'Ratio', label_en: 'Ratio', val: '9:16 Mobile' },
       { label_es: 'Enfoque', label_en: 'Focus', val: 'Gameplay' }
     ]
@@ -49,12 +49,12 @@ const portfolioVideos = [
     orientation: 'vertical',
     tag_es: 'Reel / TikTok 9:16',
     tag_en: 'Reel / TikTok 9:16',
-    subtitle_es: 'Gameplay Vertical Â· EdiciÃ³n DinÃ¡mica',
-    subtitle_en: 'Vertical Gameplay Â· Dynamic Editing',
-    desc_es: 'Clip de gameplay vertical con montaje dinÃ¡mico y foco en el momento clave.',
+    subtitle_es: 'Gameplay Vertical - Edicion Dinamica',
+    subtitle_en: 'Vertical Gameplay - Dynamic Editing',
+    desc_es: 'Clip de gameplay vertical con montaje dinamico y foco en el momento clave.',
     desc_en: 'Vertical gameplay clip with dynamic editing focused on the key moment.',
     meta: [
-      { label_es: 'CategorÃ­a', label_en: 'Category', val: 'Short Form' },
+      { label_es: 'Categoria', label_en: 'Category', val: 'Short Form' },
       { label_es: 'Ratio', label_en: 'Ratio', val: '9:16 Mobile' },
       { label_es: 'Estilo', label_en: 'Style', val: 'Fast Cuts' }
     ]
@@ -67,12 +67,12 @@ const portfolioVideos = [
     orientation: 'vertical',
     tag_es: 'Reel / TikTok 9:16',
     tag_en: 'Reel / TikTok 9:16',
-    subtitle_es: 'Gameplay Vertical Â· Short Form',
-    subtitle_en: 'Vertical Gameplay Â· Short Form',
+    subtitle_es: 'Gameplay Vertical - Short Form',
+    subtitle_en: 'Vertical Gameplay - Short Form',
     desc_es: 'Contenido vertical de gameplay preparado para formatos cortos.',
     desc_en: 'Vertical gameplay content prepared for short-form formats.',
     meta: [
-      { label_es: 'CategorÃ­a', label_en: 'Category', val: 'Short Form' },
+      { label_es: 'Categoria', label_en: 'Category', val: 'Short Form' },
       { label_es: 'Ratio', label_en: 'Ratio', val: '9:16 Mobile' },
       { label_es: 'Formato', label_en: 'Format', val: 'Vertical Reel' }
     ]
