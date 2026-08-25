@@ -946,6 +946,7 @@ section {
   justify-content: center;
   box-shadow: 0 4px 20px rgba(0, 229, 255, 0.5);
   z-index: 5;
+  cursor: pointer;
   transition: transform 0.3s var(--ease-smooth), background 0.2s ease, box-shadow 0.3s ease;
 }
 
