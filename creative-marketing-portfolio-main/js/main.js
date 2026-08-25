@@ -184,9 +184,11 @@ const translations = {
     filter_commercial: 'Comerciales & Spots',
     filter_gaming: 'Gaming & YouTube',
     card_watch: 'Reproducir Video',
+    btn_play_now: 'Ver Video en Reproductor Cinemático',
 
     player_prev: 'Anterior',
     player_next: 'Siguiente',
+    player_drive_link: 'Ver en Drive ↗',
 
     contact_eyebrow: 'Contacto & Colaboraciones',
     contact_title: 'Iniciemos un <span>Proyecto</span>',
@@ -245,9 +247,11 @@ const translations = {
     filter_commercial: 'Commercials & Spots',
     filter_gaming: 'Gaming & YouTube',
     card_watch: 'Play Video',
+    btn_play_now: 'Watch Video in Theater Player',
 
     player_prev: 'Previous',
     player_next: 'Next',
+    player_drive_link: 'Open Drive ↗',
 
     contact_eyebrow: 'Contact & Inquiries',
     contact_title: 'Let\'s Start a <span>Project</span>',
@@ -282,7 +286,6 @@ function setLanguage(lang) {
     langLabel.textContent = lang === 'es' ? 'EN' : 'ES';
   }
 
-  // Refresh coverflow caption and pagination in current language
   if (typeof updateCoverflowCaption === 'function') {
     updateCoverflowCaption();
   }
@@ -322,22 +325,24 @@ function setLanguage(lang) {
    4. APPLE-STYLE 3D COVERFLOW CAROUSEL ENGINE (Vanilla JS)
    ========================================================= */
 
-// Configuration parameters
-const CF_CONFIG = {
-  rotate: 40,      // Degrees side cards tilt
-  depth: 0.55,     // How far cards recede (fraction of card width)
-  perspective: 3,  // Perspective multiplier
-  falloff: 0.56,   // Distance decay exponent
-  fade: 0.12,      // Opacity lost per step
-  gap: 0.08,       // Gap fraction between cards
-  loop: true       // Ring loop
-};
-
 let currentFilter = 'all';
 let filteredVideos = [...portfolioVideos];
 let activeIndex = 0;
 
-// State references
+// Dynamic Coverflow settings responsive to viewport
+function getCoverflowConfig() {
+  const isMobile = window.innerWidth <= 768;
+  return {
+    rotate: isMobile ? 24 : 38,       // Milder rotate on mobile to prevent edge overflowing
+    depth: isMobile ? 0.45 : 0.55,
+    perspective: isMobile ? 2.6 : 3,
+    falloff: 0.56,
+    fade: 0.14,
+    gap: isMobile ? 0.05 : 0.08,
+    loop: true
+  };
+}
+
 let posRef = 0;
 let targetRef = 0;
 let cardWidth = 320;
@@ -356,7 +361,7 @@ let cardEls = [];
 
 function measureCardWidth() {
   if (cardEls[0]) {
-    cardWidth = cardEls[0].offsetWidth || 320;
+    cardWidth = cardEls[0].offsetWidth || (window.innerWidth <= 768 ? 240 : 320);
   }
 }
 
@@ -370,30 +375,31 @@ function paintCoverflow() {
   const count = filteredVideos.length;
   if (!count || !cardEls.length) return;
 
-  const pitch = cardWidth * (1 + CF_CONFIG.gap);
+  const cfg = getCoverflowConfig();
+  const pitch = cardWidth * (1 + cfg.gap);
   const pos = posRef;
 
   cardEls.forEach((card, index) => {
     if (!card) return;
 
     let offset = index - pos;
-    if (CF_CONFIG.loop) {
+    if (cfg.loop) {
       offset = ((offset % count) + count) % count;
       if (offset > count / 2) offset -= count;
     }
 
     const distance = Math.abs(offset);
-    const ramp = Math.pow(distance, CF_CONFIG.falloff);
-    const tilt = Math.min(CF_CONFIG.rotate * ramp, 82) * Math.sign(offset);
+    const ramp = Math.pow(distance, cfg.falloff);
+    const tilt = Math.min(cfg.rotate * ramp, 82) * Math.sign(offset);
 
     const translateX = offset * pitch;
-    const translateZ = -CF_CONFIG.depth * cardWidth * ramp;
+    const translateZ = -cfg.depth * cardWidth * ramp;
     const rotateY = -tilt;
 
     card.style.transform = `translateX(calc(-50% + ${translateX}px)) translateZ(${translateZ}px) rotateY(${rotateY}deg)`;
 
-    const edge = CF_CONFIG.loop ? Math.min(1, Math.max(0, count / 2 - distance)) : 1;
-    card.style.opacity = String(Math.max(0, 1 - CF_CONFIG.fade * distance) * edge);
+    const edge = cfg.loop ? Math.min(1, Math.max(0, count / 2 - distance)) : 1;
+    card.style.opacity = String(Math.max(0, 1 - cfg.fade * distance) * edge);
     card.style.zIndex = String(100 - Math.round(distance));
 
     const isCurrent = Math.abs(offset) < 0.4;
@@ -450,6 +456,7 @@ function updateCoverflowCaption() {
   if (!video) return;
 
   const subText = currentLang === 'es' ? video.subtitle_es : video.subtitle_en;
+  const btnText = translations[currentLang].btn_play_now || 'Reproducir Video';
 
   let metaHtml = '';
   if (video.meta && video.meta.length) {
@@ -472,7 +479,22 @@ function updateCoverflowCaption() {
     <h3 class="cf-caption-title">${video.title}</h3>
     <p class="cf-caption-subtitle">${subText}</p>
     ${metaHtml}
+    <button class="btn btn-primary cf-caption-play-btn" onclick="launchActiveVideo()">
+      <span>${btnText}</span>
+      <span class="btn-icon-wrapper">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <polygon points="5 3 19 12 5 21 5 3"></polygon>
+        </svg>
+      </span>
+    </button>
   `;
+}
+
+function launchActiveVideo() {
+  const video = filteredVideos[activeIndex];
+  if (!video) return;
+  const globalIdx = portfolioVideos.findIndex(v => v.id === video.id);
+  openTheaterPlayer(globalIdx >= 0 ? globalIdx : activeIndex);
 }
 
 function updateCoverflowDots() {
@@ -499,16 +521,15 @@ function buildCoverflowCards() {
     card.setAttribute('data-index', index);
 
     const tagText = currentLang === 'es' ? video.tag_es : video.tag_en;
+    // High quality poster thumbnail URL from Google Drive
+    const posterUrl = `https://lh3.googleusercontent.com/d/${video.driveId}=w800`;
+    const fallbackPosterUrl = `https://drive.google.com/thumbnail?id=${video.driveId}&sz=w800`;
 
     card.innerHTML = `
       <div class="cf-thumb">
+        <img class="cf-poster-img" src="${posterUrl}" alt="${video.title}" onerror="this.onerror=null; this.src='${fallbackPosterUrl}'" />
         <span class="cf-badge">${tagText}</span>
-        <div class="cf-thumb-graphic">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <polygon points="5 3 19 12 5 21 5 3"></polygon>
-          </svg>
-        </div>
-        <div class="cf-play-btn">
+        <div class="cf-play-btn" aria-label="Reproducir">
           <svg viewBox="0 0 24 24" fill="currentColor">
             <polygon points="5 3 19 12 5 21 5 3"></polygon>
           </svg>
@@ -520,7 +541,6 @@ function buildCoverflowCards() {
     `;
 
     card.addEventListener('click', (e) => {
-      // If clicking center card, launch theater player; if clicking side card, center it!
       const clickedIdx = index;
       if (clickedIdx === activeIndex) {
         const globalIdx = portfolioVideos.findIndex(v => v.id === video.id);
@@ -566,7 +586,8 @@ function initCoverflowDrag() {
 
   stage.addEventListener('pointermove', (e) => {
     if (!dragRef || dragRef.id !== e.pointerId) return;
-    const pitch = cardWidth * (1 + CF_CONFIG.gap);
+    const cfg = getCoverflowConfig();
+    const pitch = cardWidth * (1 + cfg.gap);
     if (!pitch) return;
 
     const now = performance.now();
@@ -635,13 +656,36 @@ function openTheaterPlayer(index) {
   theaterBadge.textContent = video.orientation === 'vertical' ? '9:16 Vertical' : '16:9 4K Widescreen';
   theaterCounter.textContent = `${currentTheaterIndex + 1} / ${portfolioVideos.length}`;
 
+  // Configure modal direct Google Drive link for mobile fallback
+  let actionsBox = document.getElementById('theaterActions');
+  if (!actionsBox) {
+    const topbar = theaterModal.querySelector('.theater-topbar');
+    if (topbar) {
+      actionsBox = document.createElement('div');
+      actionsBox.id = 'theaterActions';
+      actionsBox.className = 'theater-topbar-actions';
+      topbar.insertBefore(actionsBox, theaterCloseBtn);
+    }
+  }
+
+  const driveUrl = `https://drive.google.com/file/d/${video.driveId}/view?usp=sharing`;
+  const directText = translations[currentLang].player_drive_link || 'Ver en Drive ↗';
+  if (actionsBox) {
+    actionsBox.innerHTML = `
+      <a class="theater-direct-link" href="${driveUrl}" target="_blank" rel="noopener noreferrer">
+        ${directText}
+      </a>
+    `;
+  }
+
   theaterFrameContainer.className = 'theater-frame-container ' + 
     (video.orientation === 'vertical' ? 'aspect-vertical' : 'aspect-horizontal');
 
+  // Inject Google Drive embed iframe with full permissions
   theaterFrameContainer.innerHTML = `
     <iframe class="theater-iframe"
       src="https://drive.google.com/file/d/${video.driveId}/preview"
-      allow="autoplay; encrypted-media; fullscreen"
+      allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
       allowfullscreen
       loading="eager">
     </iframe>
