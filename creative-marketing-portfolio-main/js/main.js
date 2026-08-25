@@ -6,6 +6,78 @@
 /* --- 1. Video Data Collection --- */
 const portfolioVideos = [
   {
+    id: 'carlotas-ad',
+    driveId: '1YPM_cn_Jn0yUEHYDiuWQY7r2nREqRHLC',
+    title: 'Anuncio Publicitario Carlotas',
+    category: 'commercial',
+    orientation: 'vertical',
+    tag_es: 'Spot Institucional',
+    tag_en: 'Institutional Spot',
+    subtitle_es: 'ComunicaciÃ³n Institucional Â· Formato Vertical',
+    subtitle_en: 'Institutional Communication Â· Vertical Format',
+    desc_es: 'Video institucional grabado en aula con enfoque informativo y publicitario.',
+    desc_en: 'Institutional video filmed in a classroom with an informative and advertising focus.',
+    meta: [
+      { label_es: 'CategorÃ­a', label_en: 'Category', val: 'Institucional' },
+      { label_es: 'Formato', label_en: 'Format', val: '9:16 Vertical' },
+      { label_es: 'Enfoque', label_en: 'Focus', val: 'ComunicaciÃ³n' }
+    ]
+  },
+  {
+    id: '4bm-m18-v1',
+    driveId: '1C-vcA1AJOVFu53zP4EYj-1dBMjsMbAkx',
+    title: '4bienmancos M18 V1',
+    category: 'reels',
+    orientation: 'vertical',
+    tag_es: 'Reel / TikTok 9:16',
+    tag_en: 'Reel / TikTok 9:16',
+    subtitle_es: 'Gameplay Vertical Â· Ritmo & RetenciÃ³n',
+    subtitle_en: 'Vertical Gameplay Â· Pacing & Retention',
+    desc_es: 'Gameplay vertical editado para consumo rÃ¡pido y alta retenciÃ³n.',
+    desc_en: 'Vertical gameplay edit optimized for fast consumption and high retention.',
+    meta: [
+      { label_es: 'CategorÃ­a', label_en: 'Category', val: 'Short Form' },
+      { label_es: 'Ratio', label_en: 'Ratio', val: '9:16 Mobile' },
+      { label_es: 'Enfoque', label_en: 'Focus', val: 'Gameplay' }
+    ]
+  },
+  {
+    id: '4bm-m17-v3',
+    driveId: '1JCqlmZRhi7KVmcvUsqq373TJoaiXK58w',
+    title: '4bienmancos M17 V3',
+    category: 'reels',
+    orientation: 'vertical',
+    tag_es: 'Reel / TikTok 9:16',
+    tag_en: 'Reel / TikTok 9:16',
+    subtitle_es: 'Gameplay Vertical Â· EdiciÃ³n DinÃ¡mica',
+    subtitle_en: 'Vertical Gameplay Â· Dynamic Editing',
+    desc_es: 'Clip de gameplay vertical con montaje dinÃ¡mico y foco en el momento clave.',
+    desc_en: 'Vertical gameplay clip with dynamic editing focused on the key moment.',
+    meta: [
+      { label_es: 'CategorÃ­a', label_en: 'Category', val: 'Short Form' },
+      { label_es: 'Ratio', label_en: 'Ratio', val: '9:16 Mobile' },
+      { label_es: 'Estilo', label_en: 'Style', val: 'Fast Cuts' }
+    ]
+  },
+  {
+    id: '4bm-m8-v2',
+    driveId: '158uco_UegB71AAmeGHeF4nA669fL144i',
+    title: '4bienmancos M8 V2',
+    category: 'reels',
+    orientation: 'vertical',
+    tag_es: 'Reel / TikTok 9:16',
+    tag_en: 'Reel / TikTok 9:16',
+    subtitle_es: 'Gameplay Vertical Â· Short Form',
+    subtitle_en: 'Vertical Gameplay Â· Short Form',
+    desc_es: 'Contenido vertical de gameplay preparado para formatos cortos.',
+    desc_en: 'Vertical gameplay content prepared for short-form formats.',
+    meta: [
+      { label_es: 'CategorÃ­a', label_en: 'Category', val: 'Short Form' },
+      { label_es: 'Ratio', label_en: 'Ratio', val: '9:16 Mobile' },
+      { label_es: 'Formato', label_en: 'Format', val: 'Vertical Reel' }
+    ]
+  },
+  {
     id: 'gamexzonee',
     driveId: '1CE0A-vtdnEWtZ6tSFYn4cLvGSkpcLVqv',
     title: 'Expo GamexZonee',
