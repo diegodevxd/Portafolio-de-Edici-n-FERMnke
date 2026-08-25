@@ -348,6 +348,7 @@ let targetRef = 0;
 let cardWidth = 320;
 let rafId = null;
 let dragRef = null;
+let lastCoverflowGestureWasDrag = false;
 
 const stage = document.getElementById('coverflowStage');
 const track = document.getElementById('coverflowTrack');
@@ -541,6 +542,11 @@ function buildCoverflowCards() {
     `;
 
     card.addEventListener('click', (e) => {
+      if (lastCoverflowGestureWasDrag) {
+        lastCoverflowGestureWasDrag = false;
+        return;
+      }
+
       const clickedIdx = index;
       if (clickedIdx === activeIndex) {
         const globalIdx = portfolioVideos.findIndex(v => v.id === video.id);
@@ -575,17 +581,26 @@ function initCoverflowDrag() {
     }
     stage.setPointerCapture(e.pointerId);
     targetRef = posRef;
+    lastCoverflowGestureWasDrag = false;
     dragRef = {
       id: e.pointerId,
       x: e.clientX,
+      startX: e.clientX,
+      startY: e.clientY,
       pos: posRef,
       v: 0,
+      hasDragged: false,
       t: performance.now()
     };
   });
 
   stage.addEventListener('pointermove', (e) => {
     if (!dragRef || dragRef.id !== e.pointerId) return;
+    const distanceX = e.clientX - dragRef.startX;
+    const distanceY = e.clientY - dragRef.startY;
+    if (!dragRef.hasDragged && Math.hypot(distanceX, distanceY) < 6) return;
+    dragRef.hasDragged = true;
+
     const cfg = getCoverflowConfig();
     const pitch = cardWidth * (1 + cfg.gap);
     if (!pitch) return;
@@ -608,9 +623,15 @@ function initCoverflowDrag() {
 
   const endDrag = (e) => {
     if (!dragRef || dragRef.id !== e.pointerId) return;
+    const wasDrag = dragRef.hasDragged;
+    const velocity = dragRef.v;
     dragRef = null;
-    const carried = Math.max(-2, Math.min(2, dragRef?.v ? dragRef.v * 0.18 : 0));
-    settleCoverflow(Math.round(posRef + carried));
+    lastCoverflowGestureWasDrag = wasDrag;
+
+    if (wasDrag) {
+      const carried = Math.max(-2, Math.min(2, velocity * 0.18));
+      settleCoverflow(Math.round(posRef + carried));
+    }
   };
 
   stage.addEventListener('pointerup', endDrag);
