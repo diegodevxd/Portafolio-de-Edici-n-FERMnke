@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FERMnke – Video Editor & Marketing Creator Portfolio</title>
+  <meta name="description" content="Portafolio profesional de edición de video y creación de contenido estratégico de marketing digital. Reels, TikToks, Spots y Campañas." />
+
+  <!-- Google Fonts: Gochi Hand + Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+
+  <div class="ambient-glow-top"></div>
+
+  <!-- FLOATING GLASS NAV -->
+  <header class="header-nav">
+    <nav class="nav-island">
+      <a href="#home" class="nav-logo">
+        <span class="nav-logo-dot"></span>
+        FERMnke
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" data-i18n="nav_about">Sobre mí</a></li>
+        <li><a href="#skills" data-i18n="nav_skills">Habilidades</a></li>
+        <li><a href="#videos" data-i18n="nav_videos">Videos</a></li>
+        <li><a href="#contact" data-i18n="nav_contact">Contacto</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="lang-toggle" id="langToggle" aria-label="Cambiar idioma">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+          <span id="langLabel">EN</span>
+        </button>
+
+        <button class="hamburger" id="hamburgerBtn" aria-label="Abrir Menú">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MOBILE NAV OVERLAY -->
+  <div class="mobile-nav-overlay" id="mobileNavOverlay">
+    <ul class="mobile-nav-links">
+      <li><a href="#home" class="mobile-link" data-i18n="nav_home">Inicio</a></li>
+      <li><a href="#about" class="mobile-link" data-i18n="nav_about">Sobre mí</a></li>
+      <li><a href="#skills" class="mobile-link" data-i18n="nav_skills">Habilidades</a></li>
+      <li><a href="#videos" class="mobile-link" data-i18n="nav_videos">Videos</a></li>
+      <li><a href="#contact" class="mobile-link" data-i18n="nav_contact">Contacto</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-badge-container">
+      <span class="badge-pulse"></span>
+      <span class="hero-badge-text" data-i18n="hero_badge">Marketing Digital &middot; Edición Visual &middot; UEPCA</span>
+    </div>
+
+    <h1 data-i18n="hero_title" data-i18n-html="true">PORTAFOLIO DE EDICIÓN:<br /><span class="brand-highlight">FERMnke</span></h1>
+    
+    <p class="hero-subtitle" data-i18n="hero_subtitle">Creación de contenido visual de alto impacto, edición de video estratégica y narrativas orientadas a retención.</p>
+
+    <div class="hero-tags">
+      <span class="hero-tag">Reels / TikToks (9:16)</span>
+      <span class="hero-tag">Spots Publicitarios</span>
+      <span class="hero-tag">Color Grading &amp; Sound</span>
+      <span class="hero-tag">Hooks &amp; Storytelling</span>
+    </div>
+
+    <div class="hero-btns">
+      <a href="#videos" class="btn btn-primary">
+        <span data-i18n="hero_btn_videos">Explorar Videos</span>
+        <span class="btn-icon-wrapper">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="7 13 12 18 17 13"></polyline>
+            <line x1="12" y1="6" x2="12" y2="18"></line>
+          </svg>
+        </span>
+      </a>
+
+      <a href="#contact" class="btn btn-secondary">
+        <span data-i18n="hero_btn_contact">Iniciar Proyecto</span>
+        <span class="btn-icon-wrapper">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="7" y1="17" x2="17" y2="7"></line>
+            <polyline points="7 7 17 7 17 17"></polyline>
+          </svg>
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-header">
+      <span class="section-eyebrow" data-i18n="about_eyebrow">Perfil Creativo</span>
+      <h2 class="section-title" data-i18n="about_title" data-i18n-html="true">Sobre <span>mí</span></h2>
+      <p class="section-subtext" data-i18n="about_subtext">Estrategia de marketing aplicada a cada corte y fotograma.</p>
+    </div>
+
+    <div class="about-container">
+      <div class="double-bezel">
+        <div class="double-bezel-inner about-card-profile">
+          <div class="profile-visual">
+            <svg class="profile-visual-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
+              <line x1="7" y1="2" x2="7" y2="22"></line>
+              <line x1="17" y1="2" x2="17" y2="22"></line>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <line x1="2" y1="7" x2="7" y2="7"></line>
+              <line x1="2" y1="17" x2="7" y2="17"></line>
+              <line x1="17" y1="17" x2="22" y2="17"></line>
+              <line x1="17" y1="7" x2="22" y2="7"></line>
+            </svg>
+            <span class="profile-badge-pill">FERMnke</span>
+          </div>
+
+          <div class="profile-stats-row">
+            <div class="profile-stat-item">
+              <span class="profile-stat-num">100%</span>
+              <span class="profile-stat-label" data-i18n="stat_craft">Dedicación</span>
+            </div>
+            <div class="profile-stat-item">
+              <span class="profile-stat-num">9:16 / 16:9</span>
+              <span class="profile-stat-label" data-i18n="stat_formats">Multi-formato</span>
+            </div>
+            <div class="profile-stat-item">
+              <span class="profile-stat-num">UEPCA</span>
+              <span class="profile-stat-label" data-i18n="stat_edu">Marketing</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-details">
+        <p class="about-text-lead" data-i18n="about_p1" data-i18n-html="true">
+          Hola, soy <strong>FERMnke</strong>, creador de contenido y estudiante de <strong>Marketing</strong> en la <strong>UEPCA</strong>.
+        </p>
+        <p class="about-text-body" data-i18n="about_p2">
+          Me especializo en la edición de video con un enfoque centrado en engagement, ritmo dinámico y retención de audiencia. Combino principios psicológicos del marketing con técnicas de montaje y diseño sonoro para potenciar marcas personales y comerciales.
+        </p>
+        <p class="about-text-body" data-i18n="about_p3">
+          Este portafolio reúne mis producciones más destacadas: desde contenido viral de formato corto hasta anuncios publicitarios y gameplays de ritmo acelerado.
+        </p>
+
+        <div class="about-highlights-grid">
+          <div class="about-highlight-item">
+            <div class="highlight-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <div>
+              <h4 class="highlight-title" data-i18n="highlight_hook_title">Hooks de Alta Retención</h4>
+              <p class="highlight-desc" data-i18n="highlight_hook_desc">Primeros 3 segundos diseñados para detener el scroll.</p>
+            </div>
+          </div>
+
+          <div class="about-highlight-item">
+            <div class="highlight-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+            </div>
+            <div>
+              <h4 class="highlight-title" data-i18n="highlight_sound_title">Diseño de Audio &amp; SFX</h4>
+              <p class="highlight-desc" data-i18n="highlight_sound_desc">Mezcla inmersiva de efectos para elevar cada transición.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS & CREATIVE STACK -->
+  <section id="skills">
+    <div class="section-header">
+      <span class="section-eyebrow" data-i18n="skills_eyebrow">Stack &amp; Capacidades</span>
+      <h2 class="section-title" data-i18n="skills_title" data-i18n-html="true">Habilidades <span>Técnicas</span></h2>
+      <p class="section-subtext" data-i18n="skills_subtext">Especialización en herramientas y metodologías de producción audiovisual.</p>
+    </div>
+
+    <div class="skills-bento">
+      <!-- Card 1 (Span 2) -->
+      <div class="bento-card span-2">
+        <div class="bento-top">
+          <div class="bento-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
+              <line x1="7" y1="2" x2="7" y2="22"></line>
+              <line x1="17" y1="2" x2="17" y2="22"></line>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <line x1="2" y1="7" x2="7" y2="7"></line>
+              <line x1="2" y1="17" x2="7" y2="17"></line>
+              <line x1="17" y1="17" x2="22" y2="17"></line>
+              <line x1="17" y1="7" x2="22" y2="7"></line>
+            </svg>
+          </div>
+          <div>
+            <h3 data-i18n="bento_edit_title">Edición de Video de Ritmo Rápido</h3>
+            <p data-i18n="bento_edit_subtitle">Montaje dinámico, transiciones precisas y control de curvas de velocidad.</p>
+          </div>
+        </div>
+        <p data-i18n="bento_edit_desc">
+          Estructuración de cortes milimétricos sincronizados con el ritmo musical, eliminando tiempos muertos y maximizando la retención segundo a segundo.
+        </p>
+        <div class="bento-badges">
+          <span class="bento-badge">Adobe Premiere Pro</span>
+          <span class="bento-badge">CapCut Pro</span>
+          <span class="bento-badge">Speed Ramping</span>
+          <span class="bento-badge">Jump Cuts</span>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bento-card">
+        <div class="bento-top">
+          <div class="bento-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+          </div>
+          <div>
+            <h3 data-i18n="bento_motion_title">Motion Graphics &amp; VFX</h3>
+          </div>
+        </div>
+        <p data-i18n="bento_motion_desc">
+          Subtítulos animados con seguimiento, gráficos cinemáticos, llamadas a la acción y efectos de cámara.
+        </p>
+        <div class="bento-badges">
+          <span class="bento-badge">After Effects</span>
+          <span class="bento-badge">Dynamic Text</span>
+          <span class="bento-badge">Keyframing</span>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bento-card">
+        <div class="bento-top">
+          <div class="bento-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+              <line x1="12" y1="18" x2="12.01" y2="18"></line>
+            </svg>
+          </div>
+          <div>
+            <h3 data-i18n="bento_short_title">Formato Corto (TikTok &amp; Reels)</h3>
+          </div>
+        </div>
+        <p data-i18n="bento_short_desc">
+          Adaptación vertical 9:16 nativa, composición de zonas seguras y formatos virales de alta rotación.
+        </p>
+        <div class="bento-badges">
+          <span class="bento-badge">TikTok Trends</span>
+          <span class="bento-badge">Instagram Reels</span>
+          <span class="bento-badge">YouTube Shorts</span>
+        </div>
+      </div>
+
+      <!-- Card 4 (Span 2) -->
+      <div class="bento-card span-2">
+        <div class="bento-top">
+          <div class="bento-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="m4.93 4.93 4.24 4.24"></path>
+              <path d="m14.83 9.17 4.24-4.24"></path>
+              <path d="m14.83 14.83 4.24 4.24"></path>
+              <path d="m9.17 14.83-4.24 4.24"></path>
+              <circle cx="12" cy="12" r="4"></circle>
+            </svg>
+          </div>
+          <div>
+            <h3 data-i18n="bento_mkt_title">Estrategia de Marketing &amp; Conversión</h3>
+            <p data-i18n="bento_mkt_subtitle">Pensamiento analítico alineado con objetivos comerciales.</p>
+          </div>
+        </div>
+        <p data-i18n="bento_mkt_desc">
+          Creación de contenido fundamentado en funnel de conversión, segmentación de audiencia y estructura persuasiva de storytelling (AIDA: Atención, Interés, Deseo, Acción).
+        </p>
+        <div class="bento-badges">
+          <span class="bento-badge">Estrategia AIDA</span>
+          <span class="bento-badge">Análisis de Retención</span>
+          <span class="bento-badge">Content Marketing</span>
+          <span class="bento-badge">UEPCA</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3D COVERFLOW VIDEO SHOWCASE -->
+  <section id="videos">
+    <div class="section-header">
+      <span class="section-eyebrow" data-i18n="videos_eyebrow">Trabajos Seleccionados</span>
+      <h2 class="section-title" data-i18n="videos_title" data-i18n-html="true">Carrusel <span>Coverflow 3D</span></h2>
+      <p class="section-subtext" data-i18n="videos_subtext">Arrastra lateralmente o usa las flechas. Haz clic en la tarjeta central para reproducir el video.</p>
+    </div>
+
+    <!-- Category Filters -->
+    <div class="video-filter-bar" id="videoFilters">
+      <button class="filter-btn active" data-filter="all" data-i18n="filter_all">Todos</button>
+      <button class="filter-btn" data-filter="reels" data-i18n="filter_reels">Reels &amp; TikTok (9:16)</button>
+      <button class="filter-btn" data-filter="commercial" data-i18n="filter_commercial">Comerciales &amp; Spots</button>
+      <button class="filter-btn" data-filter="gaming" data-i18n="filter_gaming">Gaming &amp; YouTube</button>
+    </div>
+
+    <!-- 3D Coverflow Stage -->
+    <div class="coverflow-section-wrapper">
+      <button class="cf-nav-btn prev" id="cfPrevBtn" aria-label="Video anterior">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+
+      <div class="coverflow-stage" id="coverflowStage">
+        <div class="coverflow-track" id="coverflowTrack">
+          <!-- Cards injected dynamically by main.js -->
+        </div>
+      </div>
+
+      <button class="cf-nav-btn next" id="cfNextBtn" aria-label="Video siguiente">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+
+      <!-- Active Slide Caption -->
+      <div class="coverflow-caption-box" id="coverflowCaption">
+        <!-- Rendered dynamically by main.js -->
+      </div>
+
+      <!-- Pagination Dots -->
+      <div class="coverflow-dots" id="coverflowDots">
+        <!-- Rendered dynamically by main.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- CINEMATIC THEATER MODAL PLAYER (Mobile Safe) -->
+  <div class="theater-modal" id="theaterModal" role="dialog" aria-modal="true" aria-label="Reproductor de video">
+    <div class="theater-box">
+      <div class="theater-topbar">
+        <div class="theater-title-wrapper">
+          <span class="theater-format-badge" id="theaterBadge">9:16 Vertical</span>
+          <span class="theater-video-title" id="theaterTitle">Video Title</span>
+        </div>
+        <button class="theater-close-btn" id="theaterCloseBtn" aria-label="Cerrar reproductor">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="theater-frame-container aspect-horizontal" id="theaterFrameContainer">
+        <!-- Google Drive preview iframe injected dynamically on-demand -->
+      </div>
+
+      <div class="theater-controls">
+        <button class="theater-nav-btn" id="theaterPrevBtn" aria-label="Video anterior">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+          <span data-i18n="player_prev">Anterior</span>
+        </button>
+
+        <span class="theater-counter" id="theaterCounter">1 / 7</span>
+
+        <button class="theater-nav-btn" id="theaterNextBtn" aria-label="Video siguiente">
+          <span data-i18n="player_next">Siguiente</span>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-header">
+      <span class="section-eyebrow" data-i18n="contact_eyebrow">Contacto &amp; Colaboraciones</span>
+      <h2 class="section-title" data-i18n="contact_title" data-i18n-html="true">Iniciemos un <span>Proyecto</span></h2>
+      <p class="section-subtext" data-i18n="contact_subtext">¿Tienes una idea o necesitas elevar la calidad de tu contenido? Escríbeme y lo hacemos realidad.</p>
+    </div>
+
+    <div class="contact-wrapper">
+      <div class="double-bezel">
+        <div class="double-bezel-inner contact-card">
+          <h3 class="contact-lead" data-i18n="contact_lead">Canales directos de comunicación</h3>
+          <p class="contact-desc" data-i18n="contact_desc">Respondo habitualmente en menos de 24 horas.</p>
+
+          <div class="contact-links-grid">
+            <!-- TikTok -->
+            <a href="https://www.tiktok.com/@unsillon8" target="_blank" rel="noopener noreferrer" class="contact-channel-btn">
+              <div class="channel-icon tiktok">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1v-3.52a6.37 6.37 0 0 0-.79-.05A6.34 6.34 0 0 0 3 15.28 6.34 6.34 0 0 0 9.34 21.6c3.5 0 6.34-2.84 6.34-6.32V8.62a8.27 8.27 0 0 0 4.84 1.54V6.71a4.82 4.82 0 0 1-.93-.02z"/>
+                </svg>
+              </div>
+              <span class="channel-label">TikTok</span>
+              <span class="channel-handle">@unsillon8</span>
+            </a>
+
+            <!-- WhatsApp -->
+            <a href="https://wa.me/5214775747592" target="_blank" rel="noopener noreferrer" class="contact-channel-btn">
+              <div class="channel-icon whatsapp">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.79 14.12c-.24.68-1.2 1.25-1.68 1.33-.46.08-1.06.11-3.07-.72-2.58-1.06-4.22-3.69-4.35-3.86-.13-.17-1.04-1.39-1.04-2.65s.66-1.88.89-2.14c.24-.26.52-.32.7-.32.17 0 .35 0 .5.01.16.01.38-.06.59.45.22.53.75 1.83.82 1.96.07.13.11.29.02.47-.09.17-.13.28-.26.43-.13.15-.28.34-.4.46-.13.13-.27.27-.12.53.15.26.68 1.12 1.46 1.81 1 .89 1.85 1.17 2.11 1.3.26.13.42.11.57-.07.16-.17.68-.79.86-1.06.18-.26.36-.22.61-.13.25.09 1.58.74 1.85.88.27.13.45.2.52.31.06.11.06.66-.18 1.34z"/>
+                </svg>
+              </div>
+              <span class="channel-label">WhatsApp</span>
+              <span class="channel-handle">+52 477 574 7592</span>
+            </a>
+
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/lui._zc" target="_blank" rel="noopener noreferrer" class="contact-channel-btn">
+              <div class="channel-icon instagram">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+              </div>
+              <span class="channel-label">Instagram</span>
+              <span class="channel-handle">@lui._zc</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        FERMnke <span>&middot;</span> Portfolio
+      </div>
+      <p class="footer-text" data-i18n="footer_text">
+        &copy; 2026 FERMnke &middot; Edición de Video &amp; Estrategia de Marketing &middot; UEPCA
+      </p>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript Logic -->
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
